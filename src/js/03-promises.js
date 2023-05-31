@@ -28,9 +28,9 @@ btn.addEventListener('click', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
 
-  delayInput = Number(delay.value);
-  stepInput = Number(step.value);
-  amountInput = Number(amount.value);
+  let delayInput = Number(delay.value);
+  let stepInput = Number(step.value);
+  let amountInput = Number(amount.value);
 
   for (let i = 1; i <= amountInput; i++) {
     createPromise(i, delayInput)

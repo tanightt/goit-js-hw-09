@@ -5,30 +5,12 @@ import Notiflix from 'notiflix';
 const refs = {
   inputDate: document.querySelector('#datetime-picker'),
   startBtn: document.querySelector('[data-start]'),
-  timer: document.querySelectorAll('.timer'),
-  field: document.querySelectorAll('.field'),
-  value: document.querySelectorAll('.value'),
   days: document.querySelector('[data-days]'),
   hours: document.querySelector('[data-hours]'),
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
 }
 
-refs.timer.forEach((timer) => {
-  timer.style.display = 'flex';
-  timer.style.gap = '15px';
-  timer.style.textAlign = 'center';
-})
-
-refs.field.forEach((field) => {
-  field.style.display = 'flex';
-  field.style.flexDirection = 'column';
-})
-
-refs.value.forEach((value) => {
-  value.style.fontSize = '35px';
-})
-  
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -64,6 +46,7 @@ function onClickStart() {
     refs.hours.textContent = addLeadingZero(hours);
     refs.minutes.textContent = addLeadingZero(minutes);
     refs.seconds.textContent = addLeadingZero(seconds);
+    
     refs.startBtn.disabled = true;
     refs.inputDate.disabled = true;
   }, 1000);
